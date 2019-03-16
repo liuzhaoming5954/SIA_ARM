@@ -1,0 +1,414 @@
+<robot
+  name="SIARM2X.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-2.92980706284769E-17 -8.70177571479782E-06 0.0941532590269142"
+        rpy="0 0 0" />
+      <mass
+        value="6.8772782651285" />
+      <inertia
+        ixx="0.0432159010223056"
+        ixy="1.35081140138356E-18"
+        ixz="1.45032233105418E-18"
+        iyy="0.0432081653480771"
+        iyz="-4.587278488738E-06"
+        izz="0.0384484067081098" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Link1">
+    <inertial>
+      <origin
+        xyz="-6.41814982462418E-06 0.02270656247603 0.113064006592684"
+        rpy="0 0 0" />
+      <mass
+        value="8.00142930409177" />
+      <inertia
+        ixx="0.0607450450486604"
+        ixy="1.54306371023516E-06"
+        ixz="2.6615895652637E-06"
+        iyy="0.0504396270669847"
+        iyz="-0.00390123122694017"
+        izz="0.050244750032413" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.2"
+      rpy="-5.24974858979481E-21 9.69710423071035E-16 2.77555756156289E-17" />
+    <parent
+      link="base_link" />
+    <child
+      link="Link1" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="Link2">
+    <inertial>
+      <origin
+        xyz="-5.8525319456553E-06 0.00179077628378155 0.124836866264234"
+        rpy="0 0 0" />
+      <mass
+        value="9.33781418481922" />
+      <inertia
+        ixx="0.0867629900127046"
+        ixy="2.32630634319044E-06"
+        ixz="-4.80999194469478E-06"
+        iyy="0.0723225777489676"
+        iyz="0.013439888242594"
+        izz="0.0610029350902761" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.117385843763647 0.172044777645998"
+      rpy="-0.78539816339745 -6.16269848566583E-16 -2.12079278663986E-16" />
+    <parent
+      link="Link1" />
+    <child
+      link="Link2" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="Link3">
+    <inertial>
+      <origin
+        xyz="3.0814029638292E-07 -0.0164151277868 0.171647031443444"
+        rpy="0 0 0" />
+      <mass
+        value="11.2794114583424" />
+      <inertia
+        ixx="0.140139330093047"
+        ixy="-4.67826354454131E-07"
+        ixz="5.18836634325925E-07"
+        iyy="0.129135251315463"
+        iyz="0.016524284698031"
+        izz="0.0672199791640097" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint3"
+    type="revolute">
+    <origin
+      xyz="0 -0.0886295178129411 0.233747849253863"
+      rpy="0.78539816339745 -9.86076131526265E-32 4.96186949520385E-16" />
+    <parent
+      link="Link2" />
+    <child
+      link="Link3" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="Link4">
+    <inertial>
+      <origin
+        xyz="4.32020909457093E-06 0.00624140439682341 0.134094918108444"
+        rpy="0 0 0" />
+      <mass
+        value="10.0857913725056" />
+      <inertia
+        ixx="0.104347554115218"
+        ixy="2.8512579256372E-06"
+        ixz="4.99971275681635E-06"
+        iyy="0.0851519088935743"
+        iyz="-0.0197279048135436"
+        izz="0.0695494915515545" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint4"
+    type="revolute">
+    <origin
+      xyz="0 -0.119170993798695 0.287908585568186"
+      rpy="0.78539816339745 -5.55111512312577E-17 5.55111512312577E-17" />
+    <parent
+      link="Link3" />
+    <child
+      link="Link4" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="Link5">
+    <inertial>
+      <origin
+        xyz="7.08522766262262E-06 0.0225870272527366 0.135206378191456"
+        rpy="0 0 0" />
+      <mass
+        value="9.42423855935462" />
+      <inertia
+        ixx="0.0877628323145445"
+        ixy="6.54538557047743E-06"
+        ixz="1.92611923983262E-06"
+        iyy="0.0730057806917125"
+        iyz="-0.0104947211142906"
+        izz="0.0617444417685421" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint5"
+    type="revolute">
+    <origin
+      xyz="0 0.105117361583883 0.25139370384316"
+      rpy="-0.785398163397451 -6.3785006134028E-17 1.2266347333467E-16" />
+    <parent
+      link="Link4" />
+    <child
+      link="Link5" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="Link6">
+    <inertial>
+      <origin
+        xyz="-5.15271200138157E-06 0.0137547698862586 0.0997898002847932"
+        rpy="0 0 0" />
+      <mass
+        value="7.1645044924867" />
+      <inertia
+        ixx="0.0480270733299037"
+        ixy="1.41975091746278E-06"
+        ixz="-2.18341264010679E-06"
+        iyy="0.0433304606868653"
+        iyz="0.00187717692568413"
+        izz="0.0403927481419765" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint6"
+    type="revolute">
+    <origin
+      xyz="1.20194057075601E-05 0.128152514784161 0.212461570727763"
+      rpy="-0.78539816339745 -5.20417042793041E-17 -1.04083408558608E-17" />
+    <parent
+      link="Link5" />
+    <child
+      link="Link6" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="Link7">
+    <inertial>
+      <origin
+        xyz="-1.04083408558608E-17 0 0.0552337061979229"
+        rpy="0 0 0" />
+      <mass
+        value="3.44043665476253" />
+      <inertia
+        ixx="0.0120086539081905"
+        ixy="-1.0842021724855E-19"
+        ixz="2.65639783082599E-18"
+        iyy="0.0120086539081905"
+        iyz="1.90067135435529E-18"
+        izz="0.0171330731441722" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link7.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://SIARM2X.SLDASM/meshes/Link7.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Joint7"
+    type="revolute">
+    <origin
+      xyz="0 -0.0524389607369177 0.184496185486969"
+      rpy="0.783906990417901 -0.0545566264419179 0.0546380000539196" />
+    <parent
+      link="Link6" />
+    <child
+      link="Link7" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
