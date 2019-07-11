@@ -1,8 +1,7 @@
 %% 装置学习到的DMP数据
 clear;
-% load('thetalist_circle_001.mat');
-% load('thetalist_circle_01.mat');
 load('traj_8.mat');
+%load('traj_circle.mat');
 %% 下面开始进行仿真，这里需要先在vrep中启动仿真
 %% initialization stuff
 vrep=remApi('remoteApi');

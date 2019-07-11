@@ -13,27 +13,27 @@ T1=[0, 0, 1, 0.500; 0,1.0000, 0, 0; -1, 0, 0, 1;0,0,0,1.0000];
 [thetalist1,success] = IKinSpace(Slist, M, T1, thetalist_guess,0.001, 0.001);
 
 % 8字轨迹
-t = 0:0.01:1;
-x = 0.1*sin((10*t+1/360)*pi);
-y = 0.1*sin(20*t*pi);
+t = 0:0.001:1;
+x = 0.1*sin((t+1/360)*pi);
+y = 0.1*sin(2*t*pi);
 plot(x,y)
 grid on
 axis equal
-%comet(x,y);
+comet(x,y);
 
 % 圆形轨迹
-t = 0:0.001:2*pi;
-y = 0.1*sin(t) - 0.4813;
-x = 0.1*cos(t) + 0.1990;
+t = 0:0.01:2*pi;
+y = 0.1*sin(t) ;
+x = 0.1*cos(t) + 1;
 plot(x,y)
 grid on
 axis equal
 
 % 生成圆形轨迹关节数据
 l = length(t);
-thetalist_guess = [-1.39;0.1-1.57;1.8;-0.34-1.57;-1.57;1.57;0];
+thetalist_guess = thetalist1;
 for i=1:l
-    T_target=[0, 0, 1, 0.500; 0,1.0000, 0, 0; -1, 0, 0, 1;0,0,0,1.0000];
+    T_target=[0, 0, 1, 0.500; 0,1.0000, 0, y(i); -1, 0, 0, x(i);0,0,0,1.0000];
     [thetalist_guess,success] = IKinSpace(Slist, M, T_target, thetalist_guess,0.001, 0.001);
     thetalist(:,i)=thetalist_guess;
 end
@@ -42,7 +42,7 @@ end
 L = length(t);
 thetalist_guess = thetalist1;
 for i=1:L
-    T_target=[0, 0, 1, 0.500; 0,1.0000, 0, 0+y(i); -1, 0, 0, 1+x(i);0,0,0,1.0000];
+    T_target=[0, 0, 1, 0.500; 0,1.0000, 0, 0+x(i); -1, 0, 0, 1+y(i);0,0,0,1.0000];
     [thetalist_guess,success] = IKinSpace(Slist, M, T_target, thetalist_guess, 0.001, 0.001);
     thetalist(:,i)=thetalist_guess;
 end
