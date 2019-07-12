@@ -1,5 +1,6 @@
 %% 装置学习到的DMP数据
 clear;
+SIA_ARM7_Lenin_parameters;
 load('traj_8.mat');
 %load('traj_circle.mat');
 %% 下面开始进行仿真，这里需要先在vrep中启动仿真

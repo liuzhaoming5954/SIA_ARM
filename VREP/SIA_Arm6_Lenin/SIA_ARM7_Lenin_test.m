@@ -13,7 +13,7 @@ T1=[0, 0, 1, 0.500; 0,1.0000, 0, 0; -1, 0, 0, 1;0,0,0,1.0000];
 [thetalist1,success] = IKinSpace(Slist, M, T1, thetalist_guess,0.001, 0.001);
 
 % 8�ֹ켣
-t = 0:0.001:1;
+t = 0:0.01:2;
 x = 0.1*sin((t+1/360)*pi);
 y = 0.1*sin(2*t*pi);
 plot(x,y)
