@@ -1,4 +1,3 @@
-
 addpath('D:\MyModle\SIA_ARM\VREP\SIA_Arm6_Lenin\mr')
 clear
 SIA_ARM7_Lenin_parameters
@@ -38,7 +37,7 @@ for i=1:l
     thetalist(:,i)=thetalist_guess;
 end
 
-% 生成8字形轨迹关节数据
+% 逆解生成8字形轨迹关节数据
 L = length(t);
 thetalist_guess = thetalist1;
 for i=1:L
@@ -46,6 +45,7 @@ for i=1:L
     [thetalist_guess,success] = IKinSpace(Slist, M, T_target, thetalist_guess, 0.001, 0.001);
     thetalist(:,i)=thetalist_guess;
 end
+
 
 % 生成圆形轨迹关节数据(稀疏)
 % 画圆轨迹(稀疏)
@@ -63,3 +63,37 @@ for i=1:l
     [thetalist_guess,success] = IKinSpace(Slist, M, T_target, thetalist_guess,0.001, 0.001);
     thetalist(:,i)=thetalist_guess + [0;1.57;0;1.57;0;0];
 end
+
+% 8字形关节数据轨迹化
+ L = length(t);  dt=0.01;
+ % thetalist = thetalist';
+ % 求解速度
+ JointsVelocity(1:7,1)=[0,0,0,0,0,0,0];
+%  thetalist(8:14,1)=[0,0,0,0,0,0,0];
+    for i=2:L-1
+        JointsVelocity(1:7,i)=(thetalist(1:7,i+1)-thetalist(1:7,i-1))/(2*dt);
+    end
+ JointsVelocity(1:7,L)=[0,0,0,0,0,0,0];
+ % 求解加速度
+    for i=1:L-1
+%         thetalist(15:21,i)=(thetalist(8:14,i+1)-thetalist(8:14,i))/dt;
+        JointsAcceleration(1:7,i)=(JointsVelocity(1:7,i+1)-JointsVelocity(1:7,i))/dt;
+    end
+ JointsAcceleration(1:7,L)=[0,0,0,0,0,0,0];
+ 
+ targetJointsActual = thetalist';
+ JointsVelocity = JointsVelocity';
+ JointsAcceleration = JointsAcceleration';
+ 
+ %thetalist = thetalist';
+
+
+
+
+
+
+
+
+
+
+
